@@ -20,13 +20,17 @@ x <- read_excel("class_enrollment_summary_by_term2.18.20.xlsx",
 
 ```
 
-```{r}
+```{r total_department}
+# Here is a list of the total number of students enrolled in each course department at Harvard College.
+
 x %>%
   group_by(course_department) %>% 
   summarize(total = sum(total))
 ```
 
-```{r}
+```{r most_popular_courses}
+# a list of the most popular departments at Harvard College
+
 x %>% 
   group_by(course_department) %>% 
   summarize(total = sum(total)) %>% 
